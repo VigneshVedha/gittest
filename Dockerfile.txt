@@ -1,0 +1,11 @@
+# Use the Micro Integrator base image
+FROM wso2/wso2mi:latest
+
+# Copy your CAR file into the container
+COPY Api1_final.car /home/wso2carbon/repository/deployment/server/carbonapps/
+
+# Expose required ports (for example, HTTP and HTTPS)
+EXPOSE 8290 8253
+
+# Start Micro Integrator
+CMD ["/home/wso2carbon/wso2mi/bin/micro-integrator.sh"]
